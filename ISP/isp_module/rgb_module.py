@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math
-from .rgb_formate_change import  rgb_to_hsv, rgb_to_lum, hsv_to_rgb
+from .rgb_formate_change import  rgb_to_lum, rgb_to_yuv, yuv_to_rgb
 
 ##########################################################################
 """
@@ -244,7 +244,7 @@ class Saturation(nn.Module):
 
         lum = torch.clamp(rgb_to_lum(image), min=1e-8)     #防止除0
 
-        endance = 0.5*(1.0 + torch.cos( img_prime * math )) / lum
+        endance = 0.5*(1.0 + torch.cos( img_prime * math.pi )) / lum
 
         p = p.view(-1, 1, 1, 1)
 
