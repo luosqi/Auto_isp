@@ -26,7 +26,7 @@ class Desaturation(nn.Module):
 ISP模块：色彩校正矩阵 (CCM)
 """
 
-class ColorCorrectionMatrix(nn.Modules):
+class ColorCorrectionMatrix(nn.Module):
     """色彩校正矩阵模块"""
     
     def forward(self, img, p):
