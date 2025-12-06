@@ -15,6 +15,7 @@ def rgb_to_lum(img):
     # 切片操作 img[:, 0:1, :, :] 保持了维度为 (B, 1, H, W)，方便后续广播计算
     return 0.27 * img[:, 0:1, :, :] + 0.67 * img[:, 1:2, :, :] + 0.06 * img[:, 2:3, :, :]
 
+
 def rgb_to_hsv(img):
     """
     可微的 RGB -> HSV 转换
